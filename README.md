@@ -19,6 +19,11 @@ A few hours later, I returned to my computer and opened the Logs tab in Sentinel
 The key security event I wanted to flag as an incident was a successful login attempt, because that indicates someone gained access to the machine. To focus on those events, I ran a query that filtered for entries where the login was successful and the Account field didn’t contain “system”, because I wanted to filter out internal processes.
 ![image](https://github.com/user-attachments/assets/733dbf96-4121-442f-8253-16e734a38108)
 
+With that query I wanted to create a new sentinel rule, so that any event that satisfies that query will mark the event as an incident alert, titled "Successful LOCAL Login Attempts". It is set to update every 5 minutes.
+![image](https://github.com/user-attachments/assets/eb061d8a-22ce-4f5a-8bd9-3469e02bbe1d)
 
-Got into my VM using Remote Desktop Connection
+Despite receiving numerous brute force attack attempts, none of them managed to guess the password "Password1234." So, I decided to connect using Remote Desktop Connection from my own computer—and sure enough, I successfully logged into the VM!
 ![image](https://github.com/user-attachments/assets/0c609311-3e6e-473d-9fd9-df7b1a10a889)
+
+As shown in a previous screenshot, my login triggered an incident based on the rule I had set up. This confirms that the SIEM is successfully monitoring and alerting based on events from the VM. Now that I've proven this concept, I'm excited to experiment with additional event types to trigger different alerts!
+![image](https://github.com/user-attachments/assets/c7ad3905-e9f9-46f0-b9df-d98f7154ddfd)
