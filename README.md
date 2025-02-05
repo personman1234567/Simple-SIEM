@@ -55,3 +55,14 @@ Despite receiving numerous brute force attack attempts, none of them managed to 
 
 As shown in a previous screenshot, my login triggered an incident based on the rule I had set up. This confirms that the SIEM is successfully monitoring and alerting based on events from the VM. Now that I've proven this concept, I'm excited to experiment with additional event types to trigger different alerts!
 ![image](https://github.com/user-attachments/assets/c7ad3905-e9f9-46f0-b9df-d98f7154ddfd)
+
+## Next Steps
+
+### Next Experiment
+
+Now that I had an alert configured to trigger an incident whenever an attacker successfully gains access to my machine, I wanted to take it a step further. I realized it would be incredibly valuable to be notified as soon as an attacker begins their assault. Since brute force attacks are so common, I decided to create an alert that would detect and notify me when an attacker is actively attempting a brute force attack.
+
+![image](https://github.com/user-attachments/assets/9514d447-5f39-41f9-9b0b-834194499f19)
+
+![image](https://github.com/user-attachments/assets/9df6bdb0-6a68-448b-aaca-ba52a2f5d26f)
+
