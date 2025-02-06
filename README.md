@@ -58,11 +58,26 @@ As shown in a previous screenshot, my login triggered an incident based on the r
 
 ## Next Steps
 
-### Next Experiment
-
 Now that I had an alert configured to trigger an incident whenever an attacker successfully gains access to my machine, I wanted to take it a step further. I realized it would be incredibly valuable to be notified as soon as an attacker begins their assault. Since brute force attacks are so common, I decided to create an alert that would detect and notify me when an attacker is actively attempting a brute force attack.
+
+The query shown in the screenshot was designed to detect brute force attacks. My approach was based on the assumption that 10 failed login attempts from a single source IP within a 10-minute window is a strong indicator of an attack. To implement this, I set a threshold variable at 10, meaning any IP exceeding this threshold within the specified timeframe would be flagged as a potential brute force attempt.
+
+The query is structured to first filter events based on the event ID—specifically, 4625, which corresponds to failed login attempts. It then counts the number of failed attempts per unique source IP. If the count meets or exceeds the defined threshold, the IP is included in the query results, signaling possible malicious activity.
 
 ![image](https://github.com/user-attachments/assets/9514d447-5f39-41f9-9b0b-834194499f19)
 
-![image](https://github.com/user-attachments/assets/9df6bdb0-6a68-448b-aaca-ba52a2f5d26f)
+Initially, I designed the query to detect brute force attacks by identifying source IPs with 10 or more failed login attempts within a 10-minute window. However, I later realized that when creating a Sentinel rule, the platform already provides options to define the time window and query execution schedule. This meant my initial query was more complex than necessary, so I simplified it to this:
 
+```
+let threshold = 10;
+SecurityEvent
+| where EventID == 4625
+| where isnotempty(IpAddress)
+| summarize FailedAttempts = count() by IpAddress
+| where FailedAttempts >= threshold
+```
+Additionally, I configured entity mapping for the IpAddress variable. This is so that within each generated alert message, I can see all the IP addresses flagged as attackers during the specified time window. By mapping the entity, Sentinel automatically associates the flagged IPs with security incidents, making it easier to track and investigate malicious activity.
+![image](https://github.com/user-attachments/assets/aae0b4b7-1c85-45d4-925b-cf88ace962ae)
+
+With that, my new rule was complete, and it was time to sit back and monitor the incidents generated over the next period.
+![image](https://github.com/user-attachments/assets/9df6bdb0-6a68-448b-aaca-ba52a2f5d26f)
