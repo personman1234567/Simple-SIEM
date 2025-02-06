@@ -81,3 +81,6 @@ Additionally, I configured entity mapping for the IpAddress variable. This is so
 
 With that, my new rule was complete, and it was time to sit back and monitor the incidents generated over the next period.
 ![image](https://github.com/user-attachments/assets/9df6bdb0-6a68-448b-aaca-ba52a2f5d26f)
+
+I returned the next day to the Sentinel incidents tab and found 117 incidents! While everything was working as expected, with each incident clearly displaying the flagged IP addresses, the sheer volume was overwhelming and could drown out other important alerts that occurred overnight. Ideally, Sentinel should generate a single alert for each attacking IP address, rather than creating a new alert every 10 minutes for the same IP. Once an IP is flagged, the process should quarantine that issue until I can investigate further. After some research, I discovered that it's possible to automate this workflow using playbooks.
+![image](https://github.com/user-attachments/assets/e97b46e1-4317-45af-a40d-c6a874dbae3e)
