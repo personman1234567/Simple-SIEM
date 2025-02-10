@@ -95,3 +95,5 @@ Now that the playbook was set up, I navigated to Microsoft Sentinel, accessed th
 
 To test it, I connected to the machine via RDP again, and shortly after, I received an email notification confirming a successful login. However, as shown in the screenshot, most of the dynamic content parameters except for the timestamp were blank. This indicates that some of the dynamic fields were not set up correctly. Now that I understand the automation process, my next goal is to refine this setup and get those parameters working and, for my next experiment, to implement automatic quarantine/blocking for these brute force attackers.
 ![image](https://github.com/user-attachments/assets/4245eac7-ef47-42dd-aa3b-9102e232cf77)
+
+NOTE: I have a limited number of free credits for Azure, which restricts what I can do at the moment. I plan to use my remaining credits on another project I’ve been wanting to try. If I have any credits left after that, I will return to this project and work on automating the quarantine and blocking of malicious IP addresses attempting to brute-force my machine.
