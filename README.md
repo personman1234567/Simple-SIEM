@@ -10,6 +10,7 @@ In this project, I give myself a hands on introduction to SIEM using Microsoft S
 - [Monitoring & Alerts](#monitoring--alerts)
 - [Incident Example](#incident-example)
 - [Next Steps](#next-steps)
+- [Threat Intelligence](#threat-intelligence)
 
 ## Overview
 
@@ -97,3 +98,7 @@ To test it, I connected to the machine via RDP again, and shortly after, I recei
 ![image](https://github.com/user-attachments/assets/4245eac7-ef47-42dd-aa3b-9102e232cf77)
 
 NOTE: I have a limited number of free credits for Azure, which restricts what I can do at the moment. I plan to use my remaining credits on another project I’ve been wanting to try. If I have any credits left after that, I will return to this project and work on automating the quarantine and blocking of malicious IP addresses attempting to brute-force my machine.
+
+##Threat Intelligence
+
+For this part of the project, I am going to utilize MISP (an open source threat intelligence platform), and I am going to set it up to automatically push threat indicators over to Microsoft Sentinel.
