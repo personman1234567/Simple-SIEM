@@ -120,3 +120,16 @@ Setting Up MISP was fairly straight forward:
 
 ![image](https://github.com/user-attachments/assets/b8a721c4-585a-4366-a068-4c1cbd369ab6)
 
+
+### Importing Threat Feeds into MISP
+
+On the MISP web interface, threat indicators are sourced from Feeds. The MISP website provides a JSON file containing multiple preconfigured feeds that can be imported into a MISP instance:  
+[Feed Metadata JSON](https://github.com/MISP/MISP/blob/2.4/app/files/feed-metadata/defaults.json).  
+
+I simply copied the contents of this JSON file and pasted it into the Import Feeds section of the MISP web interface. After clicking Add, MISP successfully imported 83 new feeds, making them available for use.  
+
+![image](https://github.com/user-attachments/assets/fc640af8-7d9b-4ec2-ae89-ca70ca43a833)
+![image](https://github.com/user-attachments/assets/2baccd54-8b76-41c4-9d66-a2aa55b47e12)
+
+While the feed data was being stored, I decided I'd use the time to integrate MISP with Microsoft Sentinel by configuring the MISP2Sentinel data connector. This will also require setting up API integration between the two platforms to allow data to transfer.
+![image](https://github.com/user-attachments/assets/4fd94860-7890-49a9-b325-9c031afe4f16)
