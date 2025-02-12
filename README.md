@@ -99,6 +99,24 @@ To test it, I connected to the machine via RDP again, and shortly after, I recei
 
 NOTE: I have a limited number of free credits for Azure, which restricts what I can do at the moment. I plan to use my remaining credits on another project I’ve been wanting to try. If I have any credits left after that, I will return to this project and work on automating the quarantine and blocking of malicious IP addresses attempting to brute-force my machine.
 
-##Threat Intelligence
+## Threat Intelligence
 
 For this part of the project, I am going to utilize MISP (an open source threat intelligence platform), and I am going to set it up to automatically push threat indicators over to Microsoft Sentinel.
+
+
+Setting Up MISP was fairly straight forward:
+
+1. I started by creating a new **Ubuntu VM** in Azure and connected to it using **SSH** via the **Azure CLI**.  
+
+2. Once I had access, I installed **Docker** on the machine by following the official documentation:  
+   [Docker Engine Installation for Ubuntu](https://docs.docker.com/engine/install/ubuntu/).  
+
+3. With Docker set up, I proceeded to install **MISP** using their official **Docker image**. I followed the steps outlined in their repository:  
+   [MISP Docker Installation](https://github.com/MISP/misp-docker), and after going through the setup, I successfully got it running.  
+
+4. In order to access the MISP web interface, I had to adjust the **network settings** of my VM by opening **port 443 (HTTPS)**.  
+
+5. Once that was done, I could access MISP from my own computer by navigating to the URL I configured, where I was greeted with the login screen, confirming that everything was set up correctly!
+
+![image](https://github.com/user-attachments/assets/b8a721c4-585a-4366-a068-4c1cbd369ab6)
+
