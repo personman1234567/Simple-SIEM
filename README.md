@@ -133,3 +133,18 @@ I simply copied the contents of this JSON file and pasted it into the Import Fee
 
 While the feed data was being stored, I decided I'd use the time to integrate MISP with Microsoft Sentinel by configuring the MISP2Sentinel data connector. This will also require setting up API integration between the two platforms to allow data to transfer.
 ![image](https://github.com/user-attachments/assets/4fd94860-7890-49a9-b325-9c031afe4f16)
+
+Created a Key Vault and now a Secret in that key vault, and I am putting the MISP Auth key from my MISP instance as the value of this secret
+![image](https://github.com/user-attachments/assets/8801579c-31a6-4794-b31a-e80594a152ef)
+
+I also created a secret for some of the other information in my app registration that my function app (something I am about to create) will need to use as variables. The app registration I created has important info like the Application (client) ID and the Directory (Tenant) ID.
+![image](https://github.com/user-attachments/assets/7552b169-ae26-49d4-b165-136f39e00eae)
+
+I then created a function app using Python 3.11 to run a script that I will later set up
+![image](https://github.com/user-attachments/assets/514a84cd-b9f8-4b4b-9918-c689b45412ff)
+
+In order for my function app to be able to use these secrets, I had to give it the proper permissions, so in my Key Vault, I went into Access Control (IAM) and added the role assignment "Key Vault Secrets User" to my Function App, allowing it to read these secrets from the key vault.
+![image](https://github.com/user-attachments/assets/890be7bf-5b5b-4edc-bb5f-74c3e5adff66)
+
+I then had to link up the variables that my function app will use, to the secrets that I set up in the key vault. So I had to go to the environment variables tab, and then individually configure each of the key vault references as variables that the function app will use. The green checkmark indicated that they were properly linked up to the key vault!
+![image](https://github.com/user-attachments/assets/ba9efade-b09c-468e-9f4f-e343b27daf23)
