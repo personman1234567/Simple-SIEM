@@ -148,3 +148,6 @@ In order for my function app to be able to use these secrets, I had to give it t
 
 I then had to link up the variables that my function app will use, to the secrets that I set up in the key vault. So I had to go to the environment variables tab, and then individually configure each of the key vault references as variables that the function app will use. The green checkmark indicated that they were properly linked up to the key vault!
 ![image](https://github.com/user-attachments/assets/ba9efade-b09c-468e-9f4f-e343b27daf23)
+
+I downloaded the misp2sentinel github project and opened it in VS Code. I configured config.py to pull all of the credentials and settings from the key vault and environmental variables I set up instead of hardcoding them. Assuming it all was done correctly, this setup should allow the Azure Function to securly connect to MISP, fetch threat intelligence, and send it to Sentinel. All without exposing any sensitive credentials in the code.
+![image](https://github.com/user-attachments/assets/f29b5505-b532-46f2-81e3-c0fdf5bfa4e6)
