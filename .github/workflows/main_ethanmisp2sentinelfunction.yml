@@ -78,6 +78,7 @@ jobs:
         id: deploy-to-function
         with:
           app-name: 'EthanMisp2SentinelFunction'
+          resource-group-name: 'EthanVM2_group'
           slot-name: 'Production'
           package: '.'
           
