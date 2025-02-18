@@ -79,5 +79,5 @@ jobs:
         with:
           app-name: 'EthanMisp2SentinelFunction'
           slot-name: 'Production'
-          package: ${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}
+          package: '.'
           
