@@ -37,7 +37,7 @@ if not keyVaultName == '':
     client = SecretClient(vault_url=KVUri, credential=credential)
     
     # Retrieve values from KV (client secret, MISP-key most importantly)
-    retrieved_mispkey = client.get_secret('MISP-Key')
+    retrieved_mispkey = client.get_secret('mispkey')
     retrieved_clientsecret = client.get_secret('ClientSecret')
     
     # Set values with 

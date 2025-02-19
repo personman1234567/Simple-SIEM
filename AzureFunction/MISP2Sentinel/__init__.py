@@ -102,12 +102,12 @@ def push_to_sentinel(tenant, id, secret, workspace):
                 fp.write(json_formatted_str)
 
 def pmain():
-    # Multi-tenant mode
-    tenants_env = os.getenv('tenants', '')
-    if not tenants_env == '':
-        tenants = json.loads(tenants_env)
-        for item in tenants:
-            push_to_sentinel(item['tenantId'], item['id'], item['secret'], item['workspaceId'])
+    # # Multi-tenant mode
+    # tenants_env = os.getenv('tenants', '')
+    # if not tenants_env == '':
+    #     tenants = json.loads(tenants_env)
+    #     for item in tenants:
+    #         push_to_sentinel(item['tenantId'], item['id'], item['secret'], item['workspaceId'])
     
     # Single-tenant mode
     tenant = config.ms_auth[TENANT]
