@@ -29,4 +29,3 @@ urllib3
 virtualenv
 virtualenv-clone
 wrapt
-cryptography==3.4.8
