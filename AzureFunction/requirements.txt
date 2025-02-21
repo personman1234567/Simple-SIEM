@@ -31,4 +31,4 @@ virtualenv-clone
 wrapt
 cryptography==3.4.8
 cffi==1.17.1
-lxml==4.6.3
+lxml==4.9.3
