@@ -30,7 +30,7 @@ jobs:
       - name: Pre-package dependencies
         run: |
           cd AzureFunction
-          pip install -r requirements.txt --target=.python_packages/lib/site-packages
+          pip install --only-binary=:all: -r requirements.txt --target=.python_packages/lib/site-packages
           cd ..
 
       - name: Setup Python version
