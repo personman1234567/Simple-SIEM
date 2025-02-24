@@ -151,3 +151,6 @@ I then had to link up the variables that my function app will use, to the secret
 
 I downloaded the misp2sentinel github project and opened it in VS Code. I configured config.py to pull all of the credentials and settings from the key vault and environmental variables I set up instead of hardcoding them. Assuming it all was done correctly, this setup should allow the Azure Function to securly connect to MISP, fetch threat intelligence, and send it to Sentinel. All without exposing any sensitive credentials in the code.
 ![image](https://github.com/user-attachments/assets/f29b5505-b532-46f2-81e3-c0fdf5bfa4e6)
+
+Lots and Lots and Lots and Lots of issues. Going to ditch the azure function method and try to do this with a python virtual environment instead.
+![image](https://github.com/user-attachments/assets/04d533a9-070c-4dab-93b7-86e34f31bdf0)
