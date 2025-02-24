@@ -32,4 +32,4 @@ wrapt
 cryptography==3.4.8
 cffi==1.17.1
 lxml==4.9.3
-antlr4-python3-runtime==4.11.0
+antlr4-python3-runtime==4.11.1
