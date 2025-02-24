@@ -32,5 +32,5 @@ wrapt
 cryptography==3.4.8
 cffi==1.17.1
 lxml==4.9.3
-antlr4-python3-runtime==4.11.1
-git+https://github.com/oasis-open/cti-stix2patterns.git@master#egg=stix2patterns
+antlr4-python3-runtime==4.9.2
+stix2patterns==2.0.0
